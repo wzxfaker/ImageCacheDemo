@@ -13,6 +13,8 @@
 		1716860D2046E7ED0029DD0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1716860C2046E7ED0029DD0A /* Assets.xcassets */; };
 		171686102046E7ED0029DD0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1716860E2046E7ED0029DD0A /* LaunchScreen.storyboard */; };
 		171686132046E7ED0029DD0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 171686122046E7ED0029DD0A /* main.m */; };
+		1716861C2046E9C80029DD0A /* XAppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1716861B2046E9C80029DD0A /* XAppModel.m */; };
+		1716861E2046F7890029DD0A /* apps.plist in Sources */ = {isa = PBXBuildFile; fileRef = 171686192046E8010029DD0A /* apps.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		1716860F2046E7ED0029DD0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		171686112046E7ED0029DD0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		171686122046E7ED0029DD0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		171686192046E8010029DD0A /* apps.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = apps.plist; sourceTree = "<group>"; };
+		1716861A2046E9C80029DD0A /* XAppModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAppModel.h; sourceTree = "<group>"; };
+		1716861B2046E9C80029DD0A /* XAppModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAppModel.m; sourceTree = "<group>"; };
+		1716861D2046F0CA0029DD0A /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +68,11 @@
 				171686042046E7ED0029DD0A /* AppDelegate.m */,
 				171686062046E7ED0029DD0A /* ViewController.h */,
 				171686072046E7ED0029DD0A /* ViewController.m */,
+				1716861A2046E9C80029DD0A /* XAppModel.h */,
+				1716861B2046E9C80029DD0A /* XAppModel.m */,
 				171686092046E7ED0029DD0A /* Main.storyboard */,
+				1716861D2046F0CA0029DD0A /* placeholder.png */,
+				171686192046E8010029DD0A /* apps.plist */,
 				1716860C2046E7ED0029DD0A /* Assets.xcassets */,
 				1716860E2046E7ED0029DD0A /* LaunchScreen.storyboard */,
 				171686112046E7ED0029DD0A /* Info.plist */,
@@ -142,6 +152,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1716861E2046F7890029DD0A /* apps.plist in Sources */,
+				1716861C2046E9C80029DD0A /* XAppModel.m in Sources */,
 				171686082046E7ED0029DD0A /* ViewController.m in Sources */,
 				171686132046E7ED0029DD0A /* main.m in Sources */,
 				171686052046E7ED0029DD0A /* AppDelegate.m in Sources */,
