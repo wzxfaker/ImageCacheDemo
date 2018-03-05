@@ -86,9 +86,10 @@
     cell.textLabel.text = app.name;
     cell.detailTextLabel.text = app.download;
     //先从缓存中取
-    UIImage *image = [self.imageCaches objectForKey:app.icon];
+//    UIImage *image = [self.imageCaches objectForKey:app.icon];
+    NSData *image = [self.imageCaches objectForKey:app.icon];
     if (image) {
-        cell.imageView.image = image;
+        cell.imageView.image = [UIImage imageWithData:image];
     }else{//如果没有就去沙盒中取
         NSString *filePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
         //获取图片路径最后一个节点
@@ -103,6 +104,7 @@
             cell.imageView.image = [UIImage imageNamed:@"placeholder"];
             //试着去存储操作的字典里找到当前进行的操作
             NSBlockOperation *operation = [self.operationsDic objectForKey:app.icon];
+//            [operation cancel];
             if (!operation) {
                 NSBlockOperation *download = [NSBlockOperation blockOperationWithBlock:^{
                     NSURL *url = [NSURL URLWithString:app.icon];
@@ -116,9 +118,10 @@
                     [imageData writeToFile:fullPath atomically:YES];
                     //回到主线程设置图片
                     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                        [cell.imageView performSelector:@selector(setImage:) withObject:[UIImage imageWithData:imageData] afterDelay:0 inModes:@[NSDefaultRunLoopMode]];
+//                        [cell.imageView performSelector:@selector(setImage:) withObject:[UIImage imageWithData:imageData] afterDelay:0 inModes:@[NSDefaultRunLoopMode]];
                         //刷新表格
-//                        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                        [self.operationsDic removeObjectForKey:app.icon];
                     }];
                 }];
                 //添加到下载队列
@@ -127,6 +130,8 @@
                 [self.operationsDic setObject:download forKey:app.icon];
             }else{
                 //如果找到下载操作就什么都不用做，等待下载完成后直接显示即可
+
+
             }
         }
     }
